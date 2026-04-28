@@ -119,3 +119,4 @@ http://localhost:8501
 - Excel export helper: `app/services/excel_export.py`
 - Thin solver call wrapper: `app/services/scheduler_service.py`
 - Solver logic and scheduling rules: `core/engine.py`
+# er-schedule-optimizer
