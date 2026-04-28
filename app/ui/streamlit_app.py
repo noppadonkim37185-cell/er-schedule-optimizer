@@ -195,7 +195,7 @@ def render_preferences_tab():
     edited_prefs = st.data_editor(
         st.session_state.preferences,
         hide_index=True,
-        use_container_width=True,
+        width="stretch",
         column_config={
             "ชื่อแพทย์": st.column_config.Column(disabled=True),
             PREFERENCE_COLUMNS["no_night"]: st.column_config.CheckboxColumn(),
@@ -241,11 +241,11 @@ def render_results(selected_year, selected_month_idx, special_holidays):
                 st.success("ประมวลผลสำเร็จ!")
 
                 st.subheader("📊 สรุปจำนวนเวรรายบุคคล (Workload Summary)")
-                st.dataframe(df_summary, use_container_width=True)
+                st.dataframe(df_summary, width="stretch")
 
                 st.subheader("📅 ตารางเวร ER รายเดือน")
                 styled_schedule = style_schedule(df_schedule)
-                st.dataframe(styled_schedule, use_container_width=True)
+                st.dataframe(styled_schedule, width="stretch")
 
                 excel_bytes = build_schedule_excel(df_schedule, df_summary, styled_schedule)
                 st.download_button(
